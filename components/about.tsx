@@ -8,9 +8,9 @@ import { AboutMeModalContent } from "./modal-contents"
 const highlights = [
   {
     icon: Server,
-    title: "Backend Development",
+    title: "Frontend & Backend Development",
     description:
-      "Building robust server-side systems and RESTful APIs with Node.js and Express.",
+      "Building robust server-side systems, RESTful APIs, and responsive user interfaces.",
   },
   {
     icon: Code2,
@@ -84,7 +84,7 @@ export function About() {
           >
             <p className="text-base leading-relaxed text-muted-foreground mb-6">
               I am a Computer Science student with a strong foundation in Data
-              Structures, Algorithms, and backend development. I enjoy building
+              Structures, Algorithms, and frontend & backend development. I enjoy building
               structured, scalable systems and continuously improving my
               problem-solving skills through competitive programming and
               real-world projects. Currently seeking internship opportunities in

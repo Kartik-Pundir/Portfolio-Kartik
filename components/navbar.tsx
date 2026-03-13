@@ -3,7 +3,6 @@
 import { useState, useEffect } from "react"
 import { Menu, X } from "lucide-react"
 import { motion, AnimatePresence } from "framer-motion"
-import { ThemeToggle } from "./theme-toggle"
 
 const navLinks = [
   { label: "About", href: "#about" },
@@ -89,19 +88,10 @@ export function Navbar() {
             </motion.li>
           ))}
           
-          {/* Theme Toggle */}
           <motion.li
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 0.4, duration: 0.5 }}
-          >
-            <ThemeToggle />
-          </motion.li>
-          
-          <motion.li
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ delay: 0.5, duration: 0.5 }}
           >
             <motion.a
               href="#contact"
@@ -201,17 +191,6 @@ export function Navbar() {
                 >
                   Hire Me
                 </a>
-              </motion.li>
-              
-              {/* Theme Toggle in Mobile */}
-              <motion.li
-                variants={{
-                  open: { y: 0, opacity: 1 },
-                  closed: { y: -10, opacity: 0 }
-                }}
-                className="flex justify-center pt-2"
-              >
-                <ThemeToggle />
               </motion.li>
             </motion.ul>
           </motion.div>

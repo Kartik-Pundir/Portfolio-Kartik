@@ -1,7 +1,6 @@
 import type { Metadata, Viewport } from 'next'
 import { Inter, Fira_Code } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
-import { ThemeProvider } from 'next-themes'
 import './globals.css'
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
@@ -41,12 +40,10 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en" className="dark">
       <body className={`${inter.variable} ${firaCode.variable} font-sans antialiased`}>
-        <ThemeProvider attribute="class" defaultTheme="dark" enableSystem={false}>
-          {children}
-          <Analytics />
-        </ThemeProvider>
+        {children}
+        <Analytics />
       </body>
     </html>
   )

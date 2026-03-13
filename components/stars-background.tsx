@@ -3,13 +3,10 @@
 import { useRef, useMemo } from 'react'
 import { Canvas, useFrame } from '@react-three/fiber'
 import { Points, PointMaterial } from '@react-three/drei'
-import { useTheme } from 'next-themes'
 import * as THREE from 'three'
 
 function Stars() {
   const ref = useRef<THREE.Points>(null)
-  const { theme } = useTheme()
-  const isDark = theme === 'dark'
   
   const sphere = useMemo(() => {
     const positions = new Float32Array(3000 * 3)
@@ -44,11 +41,11 @@ function Stars() {
       <Points ref={ref} positions={sphere.positions} stride={3} frustumCulled={false}>
         <PointMaterial
           transparent
-          color={isDark ? "#ffffff" : "#3b82f6"}
+          color="#ffffff"
           size={0.04}
           sizeAttenuation={true}
           depthWrite={false}
-          opacity={isDark ? 0.8 : 0.5}
+          opacity={0.8}
           blending={THREE.AdditiveBlending}
         />
       </Points>
@@ -57,24 +54,13 @@ function Stars() {
 }
 
 export function StarsBackground() {
-  const { theme } = useTheme()
-  const isDark = theme === 'dark'
-  
   return (
     <div className="absolute inset-0 -z-10 overflow-hidden">
       {/* Gradient Background */}
-      <div className={`absolute inset-0 ${
-        isDark 
-          ? 'bg-gradient-to-b from-[#0a0e27] via-[#0d1117] to-black' 
-          : 'bg-gradient-to-b from-blue-50 via-white to-blue-100'
-      }`} />
+      <div className="absolute inset-0 bg-gradient-to-b from-[#0a0e27] via-[#0d1117] to-black" />
       
       {/* Subtle Radial Glow */}
-      <div className={`absolute inset-0 ${
-        isDark
-          ? 'bg-[radial-gradient(ellipse_at_center,_rgba(74,222,128,0.05)_0%,_transparent_50%)]'
-          : 'bg-[radial-gradient(ellipse_at_center,_rgba(59,130,246,0.1)_0%,_transparent_50%)]'
-      }`} />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_rgba(74,222,128,0.05)_0%,_transparent_50%)]" />
       
       {/* 3D Stars */}
       <Canvas camera={{ position: [0, 0, 1], fov: 75 }}>
@@ -82,13 +68,11 @@ export function StarsBackground() {
       </Canvas>
       
       {/* Twinkling Overlay Stars */}
-      <div className={`absolute inset-0 ${isDark ? 'opacity-60' : 'opacity-30'}`}>
+      <div className="absolute inset-0 opacity-60">
         {[...Array(50)].map((_, i) => (
           <div
             key={i}
-            className={`absolute w-1 h-1 rounded-full animate-twinkle ${
-              isDark ? 'bg-white' : 'bg-blue-400'
-            }`}
+            className="absolute w-1 h-1 bg-white rounded-full animate-twinkle"
             style={{
               left: `${Math.random() * 100}%`,
               top: `${Math.random() * 100}%`,
