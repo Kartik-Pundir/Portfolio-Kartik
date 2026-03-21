@@ -93,8 +93,15 @@ export function JourneyModalContent() {
       icon: Code,
       year: "2023 - Present",
       title: "Full Stack Development Journey",
-      description: "Began learning web development, progressing to modern frameworks and backend technologies, building multiple full-stack projects with React, Node.js, Express, Laravel, and databases.",
-      highlights: ["React.js & Laravel", "Node.js & Express.js", "MongoDB & SQL", "Git & GitHub"]
+      description: "Began learning web development, progressing to modern frameworks and backend technologies, building multiple full-stack projects with React, Node.js, Express, and databases.",
+      highlights: ["React.js & Tailwind CSS", "Node.js & Express.js", "MongoDB & MySQL", "Git & GitHub"]
+    },
+    {
+      icon: Award,
+      year: "2025",
+      title: "Competitive Programming",
+      description: "Achieved significant milestones in competitive programming on LeetCode. Secured Global Rank 1021 in Weekly Contest 464 among 10,000+ participants. Achieved 13th rank out of 100 in Code-A-Haunt Hackathon.",
+      highlights: ["Global Rank 1021 – Contest 464", "100+ Problems Solved", "13th in Code-A-Haunt Hackathon", "Strong DSA Foundation"]
     },
     {
       icon: Award,
@@ -164,7 +171,7 @@ export function SkillsModalContent() {
       category: "Programming Languages",
       description: "Strong foundation in multiple programming languages for different use cases",
       skills: [
-        { name: "C/C++", level: "Advanced", description: "Primary language for DSA and competitive programming" },
+        { name: "C++", level: "Advanced", description: "Primary language for DSA and competitive programming" },
         { name: "JavaScript", level: "Advanced", description: "Full-stack development with modern ES6+ features" },
         { name: "Python", level: "Intermediate", description: "Scripting and automation tasks" },
         { name: "PHP", level: "Intermediate", description: "Backend development for web applications" },
@@ -177,7 +184,7 @@ export function SkillsModalContent() {
         { name: "React.js", level: "Advanced", description: "Component-based UI development with hooks" },
         { name: "Node.js", level: "Advanced", description: "JavaScript runtime for scalable backend" },
         { name: "Express.js", level: "Advanced", description: "RESTful API development and middleware" },
-        { name: "Laravel", level: "Intermediate", description: "PHP framework for web applications" },
+        { name: "Tailwind CSS", level: "Advanced", description: "Utility-first CSS framework for rapid styling" },
       ]
     },
     {
@@ -185,18 +192,18 @@ export function SkillsModalContent() {
       description: "Database technologies for data management",
       skills: [
         { name: "MongoDB", level: "Intermediate", description: "NoSQL database for flexible data storage" },
-        { name: "SQL", level: "Intermediate", description: "Relational database management" },
-        { name: "NoSQL", level: "Intermediate", description: "Non-relational database systems" },
+        { name: "MySQL", level: "Intermediate", description: "Relational database management" },
+        { name: "PostgreSQL", level: "Intermediate", description: "Advanced open-source relational database" },
       ]
     },
     {
-      category: "Tools & Technologies",
+      category: "Tools & Platforms",
       description: "Development tools and platforms I use daily",
       skills: [
         { name: "Git & GitHub", level: "Advanced", description: "Version control and collaboration" },
-        { name: "VS Code", level: "Advanced", description: "Primary code editor with extensions" },
-        { name: "Postman", level: "Intermediate", description: "API testing and documentation" },
-        { name: "Vercel/Render", level: "Intermediate", description: "Deployment and hosting platforms" },
+        { name: "Postman", level: "Advanced", description: "API testing and documentation" },
+        { name: "AWS", level: "Intermediate", description: "Cloud services and deployment" },
+        { name: "Docker", level: "Intermediate", description: "Containerization and deployment" },
       ]
     }
   ]

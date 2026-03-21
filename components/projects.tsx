@@ -7,29 +7,38 @@ import { Tooltip } from "./tooltip"
 
 const projects = [
   {
-    title: "Market Data Bank",
-    subtitle: "Web-Based Data Management System",
+    title: "CS Smart",
+    subtitle: "Web Based Car Loan System",
     description:
-      "Developed a centralized web-based system to digitize and manage structured market records. Designed record validation logic and structured CRUD operations to ensure data accuracy and consistency.",
-    tech: ["HTML", "CSS", "Tailwind CSS", "JavaScript", "PHP"],
-    github: "https://github.com/Kartik-Pundir",
-    tooltip: "Full-stack web application for market data management",
+      "Built a fintech platform to manage loan services, leads, applications, and appointments. Developed REST APIs with JWT authentication and Google OAuth login. Created an Admin Dashboard for managing users, leads, and feedback with automated email notifications. Capable of handling 100+ concurrent users efficiently.",
+    tech: ["React.js", "Node.js", "Express.js", "MongoDB", "Tailwind CSS"],
+    github: "https://github.com/Kartik-Pundir/cs-smart-finserve",
+    tooltip: "Fintech platform with JWT auth and admin dashboard",
   },
   {
-    title: "Car Finance Management System",
-    subtitle: "Full Stack Application",
+    title: "NextGen Code Analyzer",
+    subtitle: "AI Code Analysis Platform",
     description:
-      "Built a financial management platform handling loan applications, EMI calculations, and secure customer data storage. Implemented REST APIs and structured backend logic for reliable financial record processing.",
-    tech: ["React", "Tailwind CSS", "Node.js", "Express.js", "MongoDB"],
+      "Built an AI-powered code analysis platform to review, optimize, and detect issues in source code. Built an AST-based analysis engine improving code efficiency by 20%. Integrated a third-party API for AI-based real-time suggestions. Handles 30+ concurrent users with stable performance.",
+    tech: ["React.js", "Node.js", "Express.js", "MongoDB", "Tailwind CSS"],
     github: "https://github.com/Kartik-Pundir",
-    tooltip: "MERN stack application for financial management",
+    tooltip: "AI-powered code analysis with AST engine",
+  },
+  {
+    title: "Data Banker",
+    subtitle: "Web Based Data Management System",
+    description:
+      "Developed a web-based system to manage structured market data, improving accessibility and reliability. Managed 50+ data records with full CRUD operations and validation checks. Implemented search and filtering features for faster data retrieval.",
+    tech: ["HTML", "Tailwind CSS", "JavaScript", "PHP"],
+    github: "https://github.com/Kartik-Pundir/Data-Bank-Manager",
+    tooltip: "Data management system with CRUD and search features",
   },
 ]
 
 const achievements = [
-  "Global Rank 1021 in LeetCode Weekly Contest",
-  "100+ DSA Problems Solved",
-  "100-Day & 50-Day LeetCode Badges",
+  "Global Rank 1021 in LeetCode Weekly Contest 464 among 10,000+ participants",
+  "Solved 100+ DSA problems on LeetCode",
+  "13th Rank out of 100 in Code-A-Haunt Hackathon",
 ]
 
 export function Projects() {

@@ -2,7 +2,7 @@
 
 import { useRef, useState } from "react"
 import { motion, useInView, useScroll, useTransform } from "framer-motion"
-import { GraduationCap, Briefcase, Award, Code, Maximize2 } from "lucide-react"
+import { GraduationCap, Briefcase, Award, Code, Maximize2, BookOpen } from "lucide-react"
 import { FullScreenModal } from "./full-screen-modal"
 import { JourneyModalContent } from "./modal-contents"
 
@@ -10,7 +10,7 @@ const timelineData = [
   {
     icon: GraduationCap,
     title: "Computer Science Student",
-    organization: "Lovely Professional University",
+    organization: "Lovely Professional University • CGPA: 6.9",
     period: "2023 - Present",
     description: "Pursuing Bachelor's degree in Computer Science with focus on Data Structures, Algorithms, and Software Engineering.",
     type: "education",
@@ -24,11 +24,19 @@ const timelineData = [
     type: "experience",
   },
   {
+    icon: BookOpen,
+    title: "OOPs & DSA Training",
+    organization: "CSE Path Shala",
+    period: "Jul 2025 - Aug 2025",
+    description: "Completed 35+ hours live training on C++ programming, OOP, and Data Structures & Algorithms. Solved problems on sorting, searching, and time complexity.",
+    type: "training",
+  },
+  {
     icon: Award,
     title: "LeetCode Achievements",
     organization: "Competitive Programming",
     period: "2025",
-    description: "Global Rank 1021 in Weekly Contest. Solved 100+ DSA problems. Earned 100-Day and 50-Day badges.",
+    description: "Global Rank 1021 in Weekly Contest 464 among 10,000+ participants. Solved 100+ DSA problems. Achieved 13th rank in Code-A-Haunt Hackathon.",
     type: "achievement",
   },
   {

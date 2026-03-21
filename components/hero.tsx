@@ -6,21 +6,48 @@ import Image from "next/image"
 import { motion } from "framer-motion"
 import { StarsBackground } from "./stars-background"
 
+const typingRoles = [
+  "Full Stack Developer",
+  "React.js Developer",
+  "Node.js Developer",
+  "Problem Solver",
+  "Open to Work",
+]
+
 export function Hero() {
   const [isVisible, setIsVisible] = useState(false)
+  const [roleIndex, setRoleIndex] = useState(0)
+  const [displayed, setDisplayed] = useState("")
+  const [isDeleting, setIsDeleting] = useState(false)
 
   useEffect(() => {
     setIsVisible(true)
   }, [])
 
+  // Typing animation effect
+  useEffect(() => {
+    const current = typingRoles[roleIndex]
+    let timeout: NodeJS.Timeout
+
+    if (!isDeleting && displayed.length < current.length) {
+      timeout = setTimeout(() => setDisplayed(current.slice(0, displayed.length + 1)), 80)
+    } else if (!isDeleting && displayed.length === current.length) {
+      timeout = setTimeout(() => setIsDeleting(true), 1800)
+    } else if (isDeleting && displayed.length > 0) {
+      timeout = setTimeout(() => setDisplayed(current.slice(0, displayed.length - 1)), 40)
+    } else if (isDeleting && displayed.length === 0) {
+      setIsDeleting(false)
+      setRoleIndex((prev) => (prev + 1) % typingRoles.length)
+    }
+
+    return () => clearTimeout(timeout)
+  }, [displayed, isDeleting, roleIndex])
+
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
-      transition: {
-        staggerChildren: 0.15,
-        delayChildren: 0.2,
-      },
+      transition: { staggerChildren: 0.15, delayChildren: 0.2 },
     },
   }
 
@@ -29,10 +56,7 @@ export function Hero() {
     visible: {
       opacity: 1,
       y: 0,
-      transition: {
-        duration: 0.6,
-        ease: [0.22, 1, 0.36, 1],
-      },
+      transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] as const },
     },
   }
 
@@ -41,10 +65,7 @@ export function Hero() {
     visible: {
       opacity: 1,
       scale: 1,
-      transition: {
-        duration: 0.8,
-        ease: [0.22, 1, 0.36, 1],
-      },
+      transition: { duration: 0.8, ease: [0.22, 1, 0.36, 1] as const },
     },
   }
 
@@ -85,7 +106,7 @@ export function Hero() {
             <span className="relative inline-flex h-2 w-2 rounded-full bg-primary" />
           </span>
           <span className="text-xs font-medium text-primary">
-            Open to Internship Opportunities
+            Open to Work
           </span>
         </motion.div>
 
@@ -97,13 +118,14 @@ export function Hero() {
           Kartik Pundir
         </motion.h1>
 
-        {/* Role */}
-        <motion.p
+        {/* Typing Role */}
+        <motion.div
           variants={itemVariants}
-          className="mb-6 text-lg font-medium text-muted-foreground md:text-xl"
+          className="mb-6 flex items-center justify-center gap-1 text-lg font-medium text-primary md:text-xl min-h-[32px]"
         >
-          Full Stack Developer
-        </motion.p>
+          <span>{displayed}</span>
+          <span className="animate-pulse text-primary">|</span>
+        </motion.div>
 
         {/* Description */}
         <motion.p
@@ -131,8 +153,7 @@ export function Hero() {
           </motion.a>
           <motion.a
             href="/resume.pdf"
-            target="_blank"
-            rel="noopener noreferrer"
+            download
             className="inline-flex items-center gap-2 rounded-lg border border-border bg-secondary px-6 py-3 text-sm font-semibold text-secondary-foreground transition-all hover:border-primary/30 hover:bg-secondary/80"
             whileHover={{ scale: 1.05, y: -2 }}
             whileTap={{ scale: 0.95 }}

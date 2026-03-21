@@ -7,10 +7,13 @@ import { Projects } from "@/components/projects"
 import { Contact } from "@/components/contact"
 import { Footer } from "@/components/footer"
 import { AnimatedBackground } from "@/components/animated-background"
+import { ScrollProgress } from "@/components/scroll-progress"
+import { BackToTop } from "@/components/back-to-top"
 
 export default function Home() {
   return (
     <>
+      <ScrollProgress />
       <AnimatedBackground />
       <Navbar />
       <main>
@@ -22,6 +25,7 @@ export default function Home() {
         <Contact />
       </main>
       <Footer />
+      <BackToTop />
     </>
   )
 }
